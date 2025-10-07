@@ -1,6 +1,4 @@
-FROM maven:3.9.4-amazoncorretto
-
-
+FROM maven:3.9.4-amazoncorretto AS builder
 WORKDIR /app
 COPY ./pom.xml .
 RUN mvn dependency:resolve
