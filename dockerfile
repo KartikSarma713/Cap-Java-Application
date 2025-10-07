@@ -3,5 +3,5 @@ WORKDIR /app
 COPY . .
 RUN mvn clean package
 
-FROM jetty:9.4
-COPY --from=builder /app/target/maven-web-application.war /var/lib/jetty/webapps/root.war
+FROM tomcat:9.0
+COPY --from=builder /app/target/maven-web-application.war /usr/local/tomcat/webapps/ROOT.war
