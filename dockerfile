@@ -3,7 +3,7 @@ WORKDIR /app
 COPY ./pom.xml .
 RUN mvn dependency:resolve
 COPY . .
-RUN mvn package
+RUN mvn clean package
 
 FROM openjdk:latest
 WORKDIR /app
